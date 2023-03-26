@@ -36,9 +36,18 @@ document.addEventListener("click",function(){
 window.alert("you are gay");
 });
 
-let button = document.querySelector('.click');
+//let button = document.querySelector('.click');
+//button.addEventListener("click",function(){
+   // window.alert("you pressed a button");
+//});
+let button = document.querySelector('.dark');
 button.addEventListener("click",function(){
-    window.alert("you pressed a button");
+ document.body.classList.toggle("dark");
+ if(button.textContent == "Dark Mode"){
+    button.textContent = "Light Mode";
+ }else{
+  button.textContent = "Dark Mode";  
+ }
 });
 
 
