@@ -33,7 +33,7 @@ movies1[1].style.backgroundColor = "blue"
 //Event listener
 
 document.addEventListener("click",function(){
-window.alert("you are gay");
+window.alert("Are you Sure");
 });
 
 //let button = document.querySelector('.click');
