@@ -1,40 +1,45 @@
 let submitButton = document.getElementById("submitButton");
+let errors ={};
 
-submitButton.addEventListener("click",function(e) {
-  e.preventDefault();
-    let signupForm = document.forms["signupForm"];
-  
-  let FirstNameInput = signupForm.FirstName;
-  let LastNameInput = signupForm.LastName;
+submitButton.addEventListener("click",function(e){
+    e.preventDefault();
+     errors ={};
+   let signupForm = document.forms["signupForm"];
+   let FirstNameInput= signupForm.FirstName;
+   let LastNameInput= signupForm.LastName;
+   let PasswordInput= signupForm.Password;
+   let EmailInput= signupForm.Email;
 
+   if (FirstNameInput.value==""){
+    errors.FirstName ="Firstname Should not be empty";
+   
+   }
+   if (LastNameInput.value==""){
+    errors.LastName ="Lastname Should not be empty";
+   
+   }
+   if(PasswordInput.value== ""){
+    errors.Password= "Password should not be empty";
+   }
+   if(PasswordInput.value.length <= 5){
+    errors.Password= "Minimum 6 character are needed"
+   }
+   if(EmailInput.value== ""){
+    errors.Email = "Email should not be empty"
+   }
+   console.log(errors);
+   
+ 
 
-  if(FirstNameInput.value == ""){
-    errors.FirstName = "Firstname SHoul not be empty";
-    //let FirstNameGroup = document.getElementById("FirstNameGroup");
-    //FirstNameMessage = document.querySelector("#FirstNameGroup .message");
+   for (let error in errors){
+    let LastNameGroup = document.getElementById(`${error}Group`);
+    let LastNameMessage = document.querySelector(`#${error}Group .message`);
+    LastNameGroup.classList.add("error");
+    LastNameMessage.textContent =errors[error];
+   
+   }
 
-    //FirstNameGroup.classList.add("error");
-    //FirstNameMessage.textContent = "Firstname Should not be empty";
-  }
-  if(LastNameInput.value == ""){
-    errors.LastName = " Lastname should Not be empty";
-    //let LastNameGroup = document.getElementById("LastNameGroup");
-    //LastNameMessage = document.querySelector("#LastNameGroup .message");
-
-    //LastNameGroup.classList.add("error");
-    //LastNameMessage.textContent = "Lastname Should not be empty";
-  }
-  comsole.log(errors);
-  for (let error in errors){
-
-  }
-
- // console.log(FirstNameInput.value);
-  //let LastNameInput = signupForm.LastName;
-  //console.log(LastNameInput.value);
-  //let EmailInput = signupForm.Email;
-  //console.log(EmailInput.value);
-  //let PasswordInput = signupForm.Password;
-  //console.log(PasswordInput.value);
-
+   if(Object.keys(errors).length == 0){
+    signupForm.submit();
+   }
 });
