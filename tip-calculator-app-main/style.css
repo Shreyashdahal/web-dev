@@ -57,13 +57,16 @@ label,input {
     width: 100%;
     padding: 10px 20px;
     background-color:var(--color-neutral-4) ;
-border: none;
-
+    border: none;
+    font-family: var(--primary-font);
+    color: var(--color-neutral-1);
+    font-size: var(--font-input-size);
+    text-align: right;
 }
 .tips-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+   
 }
  .tips-group .button{
     background-color:  var(--color-neutral-1);
@@ -71,9 +74,63 @@ border: none;
     border: none;
     color: var(--color-white);
     font-size: var(--font-input-size);
-    width:calc(33.33% - 40px) ;
+    width: calc(33.33% - 20px) ;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-family: (var(--primary-font));
 
  }
- .tips-group input{
+ .tips-group .button:hover{
+background-color: var(--color-neutral-4);
+color: var(--color-neutral-1);
+cursor: pointer;
+transition: all 0.2 ;
+ }
 
+ .calculator-result{
+    background-color: var(--color-neutral-1);
+    border-radius:10px ;
+    padding: 30px 30px ;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+ }
+
+ .calculation-amount{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+ } 
+ .main-title{
+    color: var(--color-neutral-3);
+    font-size: 18px;
+ }
+
+ .subtitle{
+    color: var(--color-neutral-3);
+    font-size: 14px;
+ }
+
+ .amount{
+    font-size: 30px;
+    color: var(--color-primary);
+ }
+
+ .calculator-result .button{
+    width : 100%;
+    margin-top: auto ;
+    background-color: var(--color-neutral-4);
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border: none;
+    font-family: (var(--primary-font));
+    border-radius: 10px;
+    font-size: 18px;
+ }
+
+ .calculator-result .button:hover{
+    cursor: pointer;
+    background-color: var(--color-primary);
+    transition: all 0.2;
  }
